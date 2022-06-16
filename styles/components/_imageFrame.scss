@@ -1,0 +1,23 @@
+.imageFrame {
+	position: relative;
+	height: 81rem;
+	width: 60rem;
+	.image {
+		box-shadow: inset 100px 100px 10px 10px rgba(14, 90, 81, 0.337);
+	}
+}
+.imageFrame::before {
+	content: "";
+	position: absolute;
+	width: 60rem;
+	height: 81rem;
+	box-shadow: inset 60rem 81rem 10px 10px rgba(4, 23, 21, 0.811);
+	z-index: 10;
+	transition-property: box-shadow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+.imageFrame:hover::before {
+	content: "";
+	box-shadow: inset 60rem 81rem 0rem 0rem rgba(4, 23, 21, 0.504);
+}

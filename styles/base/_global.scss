@@ -1,0 +1,35 @@
+@font-face {
+	font-family: "Times New Roman";
+	src: url("./Vendor/Fonts/times\ new\ roman.ttf"),
+		url("./Vendor/Fonts/times\ new\ roman\ bold.ttf"),
+		url("./Vendor/Fonts/times\ new\ roman\ italic.ttf"),
+		url("./Vendor/Fonts/times\ new\ roman\ bold\ italic.ttf");
+}
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	background: $primaryColor;
+	color: $accentColor;
+}
+
+.container {
+	display: block;
+	max-width: 1920px;
+	margin: auto;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 1920px) {
+	.container {
+		max-width: 1366px;
+	}
+}

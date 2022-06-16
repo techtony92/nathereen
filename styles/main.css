@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "Times New Roman";
+  src: url("./Vendor/Fonts/times new roman.ttf"), url("./Vendor/Fonts/times new roman bold.ttf"), url("./Vendor/Fonts/times new roman italic.ttf"), url("./Vendor/Fonts/times new roman bold italic.ttf");
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+  background: #141019;
+  color: #F2F0DB;
+}
+
+.container {
+  display: block;
+  max-width: 1920px;
+  margin: auto;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1920px) {
+  .container {
+    max-width: 1366px;
+  }
+}
+
+.articleHeadingText {
+  font-family: "Times New Roman";
+  font-size: 7rem;
+  width: 72rem;
+  position: relative;
+  bottom: 42rem;
+  -webkit-transform: translateX(64rem);
+          transform: translateX(64rem);
+}
+
+.imageFrame {
+  position: relative;
+  height: 81rem;
+  width: 60rem;
+}
+
+.imageFrame .image {
+  -webkit-box-shadow: inset 100px 100px 10px 10px rgba(14, 90, 81, 0.337);
+          box-shadow: inset 100px 100px 10px 10px rgba(14, 90, 81, 0.337);
+}
+
+.imageFrame::before {
+  content: "";
+  position: absolute;
+  width: 60rem;
+  height: 81rem;
+  -webkit-box-shadow: inset 60rem 81rem 10px 10px rgba(4, 23, 21, 0.811);
+          box-shadow: inset 60rem 81rem 10px 10px rgba(4, 23, 21, 0.811);
+  z-index: 10;
+  -webkit-transition-property: -webkit-box-shadow;
+  transition-property: -webkit-box-shadow;
+  transition-property: box-shadow;
+  transition-property: box-shadow, -webkit-box-shadow;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+.imageFrame:hover::before {
+  content: "";
+  -webkit-box-shadow: inset 60rem 81rem 0rem 0rem rgba(4, 23, 21, 0.504);
+          box-shadow: inset 60rem 81rem 0rem 0rem rgba(4, 23, 21, 0.504);
+}
+
+.articlePreview {
+  border: 1px solid limegreen;
+  /*
+
+    Will change depending on the odd and even child
+    padding-left:20rem;
+    padding-right:20rem;
+
+    */
+}
+/*# sourceMappingURL=main.css.map */
