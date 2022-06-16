@@ -1,9 +1,9 @@
 .articleHeadingText {
 	font-family: "Times New Roman";
 	font-size: 7rem;
-	width: 72rem;
-	position: relative;
-	bottom: 42rem;
-	// transform: translateX(-100rem); // Ending --> translateX(64rem)
-	transform: translateX(64rem); // Ending --> translateX(64rem)
+}
+
+.articleHeadlineText {
+	font-size: 3rem;
+	font-weight: 300;
 }

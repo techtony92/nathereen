@@ -36,11 +36,11 @@ html {
 .articleHeadingText {
   font-family: "Times New Roman";
   font-size: 7rem;
-  width: 72rem;
-  position: relative;
-  bottom: 42rem;
-  -webkit-transform: translateX(64rem);
-          transform: translateX(64rem);
+}
+
+.articleHeadlineText {
+  font-size: 3rem;
+  font-weight: 300;
 }
 
 .imageFrame {
@@ -87,5 +87,22 @@ html {
     padding-right:20rem;
 
     */
+}
+
+.articlePreview .articleHeading {
+  position: relative;
+  bottom: 42rem;
+  width: 72rem;
+  -webkit-transform: translateX(64rem);
+          transform: translateX(64rem);
+  margin-bottom: 2rem;
+}
+
+.articlePreview .articleHeadline {
+  position: relative;
+  bottom: 42rem;
+  width: 72rem;
+  -webkit-transform: translateX(64rem);
+          transform: translateX(64rem);
 }
 /*# sourceMappingURL=main.css.map */

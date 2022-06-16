@@ -25,7 +25,7 @@ export const ArticleHeading = ({ text }: HeadingProps) => {
 export const ArticleHeadline = ({ text }: HeadingProps) => {
 	return (
 		<div className="articleHeadline">
-			<h4 className="articleHealineText">{text}</h4>
+			<h4 className="articleHeadlineText">{text}</h4>
 		</div>
 	);
 };
