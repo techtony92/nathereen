@@ -1,15 +1,16 @@
 /** @type {import('next').NextConfig} */
-const webpack = require("webpack");
-const {parsed:envKeys} = require("dotenv").config({path:"./.env"});
-const nextConfig = {
-  images:{
-    domains:["source.unsplash.com"]
-  },
-  reactStrictMode: true,
-  webpack(nextConfig){
-    nextConfig.plugins.push(new webpack.EnvironmentPlugin(envKeys))
-    return nextConfig
-  }
-}
 
-module.exports = nextConfig
+const nextConfig = {
+	reactStrictMode: true,
+	images: {
+		domains: ["source.unsplash.com"],
+	},
+	webpack: (
+		nextConfig,
+		{ buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
+	) => {
+		return nextConfig;
+	},
+};
+
+module.exports = nextConfig;
