@@ -4,13 +4,18 @@
 		bottom: 42rem;
 		width: 72rem;
 		// transform: translateX(-100rem); // Ending --> translateX(64rem)
-		transform: translateX(64rem); // Ending --> translateX(64rem)
+		//transform: translateX(64rem); // Ending --> translateX(64rem)
 		margin-bottom: 2rem;
 	}
 	.articleHeadline {
 		position: relative;
 		bottom: 42rem;
 		width: 72rem;
-		transform: translateX(64rem);
+		//transform: translateX(64rem);
+	}
+
+	.headineLeft {
+	}
+	.healineRight {
 	}
 }

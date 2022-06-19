@@ -28,6 +28,9 @@ html {
 	overflow: hidden;
 }
 
+.mantaineButton__root {
+	border: 3px solid green;
+}
 @media screen and (max-width: 1920px) {
 	.container {
 		max-width: 1366px;

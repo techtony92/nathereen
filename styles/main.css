@@ -17,7 +17,7 @@ html {
           box-sizing: border-box;
   font-size: 62.5%;
   background: #141019;
-  color: #F2F0DB;
+  color: #f2f0db;
 }
 
 .container {
@@ -25,6 +25,10 @@ html {
   max-width: 1920px;
   margin: auto;
   overflow: hidden;
+}
+
+.mantaineButton__root {
+  border: 3px solid green;
 }
 
 @media screen and (max-width: 1920px) {
@@ -89,12 +93,20 @@ html {
     */
 }
 
+.articlePreview .articleImageRight {
+  -webkit-transform: translateX(75rem);
+          transform: translateX(75rem);
+}
+
+.articlePreview .articleHeadingRight {
+  -webkit-transform: translateX(63rem);
+          transform: translateX(63rem);
+}
+
 .articlePreview .articleHeading {
   position: relative;
   bottom: 42rem;
   width: 72rem;
-  -webkit-transform: translateX(64rem);
-          transform: translateX(64rem);
   margin-bottom: 2rem;
 }
 
@@ -102,7 +114,10 @@ html {
   position: relative;
   bottom: 42rem;
   width: 72rem;
-  -webkit-transform: translateX(64rem);
-          transform: translateX(64rem);
+}
+
+.mantaineRootButton {
+  color: #f2f0db;
+  font-size: 2.5rem;
 }
 /*# sourceMappingURL=main.css.map */

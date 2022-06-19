@@ -1,5 +1,13 @@
-{"verbose": true,
-    "ignore": ["node_modules", ".next"],
-    "watch": ["pages/**/*", "index.js","index.ts", "styles/**/*", "main.css"],
-    "ext": "ts tsx js json scss css"
+{
+	"verbose": true,
+	"ignore": ["node_modules", ".next"],
+	"watch": [
+		"components/**/*",
+		"pages/**/*",
+		"index.js",
+		"index.ts",
+		"styles/**/*",
+		"main.css"
+	],
+	"ext": "ts tsx js json scss css"
 }

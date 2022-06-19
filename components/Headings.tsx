@@ -1,7 +1,8 @@
 import React from "react";
-import { appDebugger } from "../../devtools/debugger";
+import { appDebugger } from "../devtools/debugger";
 type HeadingProps = {
 	text: string;
+	classValue: string;
 };
 
 const MainTitle = ({ text }: HeadingProps) => {
@@ -15,16 +16,16 @@ const MainTitle = ({ text }: HeadingProps) => {
 	);
 };
 
-export const ArticleHeading = ({ text }: HeadingProps) => {
+export const ArticleHeading = ({ classValue, text }: HeadingProps) => {
 	return (
-		<div className="articleHeading">
+		<div className={`${classValue} articleHeading`}>
 			<h3 className="articleHeadingText">{text}</h3>
 		</div>
 	);
 };
-export const ArticleHeadline = ({ text }: HeadingProps) => {
+export const ArticleHeadline = ({ classValue, text }: HeadingProps) => {
 	return (
-		<div className="articleHeadline">
+		<div className={`${classValue} articleHeadline`}>
 			<h4 className="articleHeadlineText">{text}</h4>
 		</div>
 	);

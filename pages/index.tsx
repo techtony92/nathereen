@@ -1,13 +1,27 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Head from "next/head";
-import ArticlePreview from "./components/ArticlePreview";
+import { Button } from "@mantine/core";
+import { Context } from "react";
+import ArticlePreview from "../components/ArticlePreview";
 import MainTitle, {
 	ArticleHeading,
 	ArticleHeadline,
-} from "./components/Headings";
-import ImageFrame from "./components/ImageFrame";
+} from "../components/Headings";
+import ImageFrame from "../components/ImageFrame";
 
-const Home: NextPage = () => {
+type HomeProps = {
+	ArticleItems: number[];
+};
+
+const Home: NextPage<HomeProps> = ({ ArticleItems }: HomeProps) => {
+	/* Pass Down a left or right align class to 
+    even and odd Article's when mapped to render 
+
+  */
+	for (let i = 0; i < 29; i++) {
+		ArticleItems[i] = i;
+	}
 	return (
 		<div>
 			<Head>
@@ -17,31 +31,45 @@ const Home: NextPage = () => {
 			</Head>
 
 			<main>
-				<MainTitle text={"Nathereen"} />
+				<MainTitle classValue={""} text={"Nathereen"} />
 				<section className="articleColumn container">
-					<ArticlePreview
-						ArticlePreviewImage={
-							<ImageFrame
-								imageSource={"https://source.unsplash.com/random"}
-								imageSizeBehavor={"fill"}
-								classValue={"articlePreviewImage image"}
-								imageWidth={500}
-								imageHeight={500}
-							/>
-						}
-						ArticlePreviewHeading={
-							<ArticleHeading
-								text={"Some Article Title That Describes A Point"}
-							/>
-						}
-						ArticlePreviewHeadline={
-							<ArticleHeadline
-								text={
-									"Some Article Headline that supports the Heading and Photo of the post"
+					{ArticleItems &&
+						ArticleItems.map((article, index) => (
+							<ArticlePreview
+								key={index}
+								path={`/post/${index}`}
+								ArticlePreviewImage={
+									<ImageFrame
+										imageSource={"https://source.unsplash.com/random"}
+										imageSizeBehavor={"fill"}
+										classValue={`articlePreviewImage image`}
+										positioningClassValue={
+											index % 2 ? `articleImageRight ` : `articleImageLeft`
+										}
+										imageWidth={500}
+										imageHeight={500}
+									/>
+								}
+								ArticlePreviewHeading={
+									<ArticleHeading
+										classValue={
+											index % 2 ? `articleHeadingLeft` : `articleHeadingRight`
+										}
+										text={"Some Article Title That Describes A Point"}
+									/>
+								}
+								ArticlePreviewHeadline={
+									<ArticleHeadline
+										classValue={
+											index % 2 ? `articleHeadingLeft` : `articleHeadingRight`
+										}
+										text={
+											"Some Article Headline that supports the Heading and Photo of the post"
+										}
+									/>
 								}
 							/>
-						}
-					/>
+						))}
 				</section>
 			</main>
 		</div>
@@ -49,3 +77,10 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+export async function getStaticProps(context: Context<{}>) {
+	return {
+		props: {
+			ArticleItems: [],
+		},
+	};
+}
