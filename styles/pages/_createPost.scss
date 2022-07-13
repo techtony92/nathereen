@@ -1,0 +1,81 @@
+.createPost {
+	height: 100%;
+	.content {
+		@include flex(row, space-around, center);
+		&Editor {
+			height: 100vh;
+			.mantineEditorRoot__Title {
+				height: 20rem;
+				width: 80rem;
+			}
+			.mantineEditorRoot__Passage {
+				height: 60rem; // Start At 60rem and conditionally expand to fit content
+				width: 100rem;
+			}
+			.mediaArea {
+				@include flex(row, space-between, flex-start);
+				column-gap: 5rem;
+				.mediaList {
+					height: 100rem;
+					width: 30rem;
+					padding: 2rem 1.5rem;
+					border: 1px dashed $accentColor;
+					overflow-y: auto;
+					&Frame {
+						position: relative;
+						height: 35rem;
+						margin-bottom: 3rem;
+					}
+				}
+				.mantineDropZoneRoot {
+					width: 70rem;
+				}
+			}
+		}
+	}
+
+	.createPostGrid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(35rem, auto));
+		width: 100%;
+		column-gap: 2rem;
+		row-gap: 2rem;
+		height: auto;
+		.createPostGridItem {
+			position: relative;
+			width: 35rem;
+			height: 43rem;
+		}
+	}
+}
+
+.positioningEditor {
+	height: auto;
+	.contentPositioning {
+		height: auto;
+		overflow-y: auto;
+		.textHandler {
+			width: 50rem;
+		}
+		.imageHandler {
+			display: inline-block;
+			.maneuverableImageFrame {
+				position: relative;
+				width: 30rem;
+				height: 40rem;
+			}
+		}
+	}
+}
+
+.contentPreview {
+	height: 100vh;
+	.imageHandler {
+		display: inline-block;
+		.previewImageFrame {
+			position: relative;
+			width: 30rem;
+			height: 40rem;
+		}
+	}
+}

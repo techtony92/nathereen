@@ -1,6 +1,7 @@
-import React from "react";
-import { Button } from "@mantine/core";
+import React, { useRef, MouseEvent } from "react";
+import { Button as MantineButton } from "@mantine/core";
 import { MANTINE_BUTTON_STYLE_VALUES, findValue } from "../utils/styleUtils";
+import { HTMLInputEvent } from "../utils/domUtils";
 type ButtonProps = {
 	variant:
 		| "filled"
@@ -11,25 +12,27 @@ type ButtonProps = {
 		| "default"
 		| "subtle";
 	color: string | undefined;
-	gradient:
+	gradient?:
 		| {
 				from: string;
 				to: string;
 				deg: number;
 		  }
 		| undefined;
-	loading: boolean | undefined;
+	loading?: boolean | undefined;
 	text: string;
-	loaderPosition: "right" | "left" | undefined;
-	icon: boolean;
-	iconPosition: "right" | "left" | undefined;
-	iconElement: JSX.Element | undefined;
-	mantineClassName: string[];
-	parentCoreClass: string;
-	isLink: boolean;
-	path: string | null;
+	loaderPosition?: "right" | "left" | undefined;
+	icon?: boolean;
+	iconPosition?: "right" | "left" | undefined;
+	iconElement?: JSX.Element | undefined;
+	mantineClassName?: string[];
+	parentCoreClass?: string;
+	isLink?: boolean;
+	path?: string | null;
+	action?: Function;
+	actionArgs?: {};
 };
-export const TextButton = ({
+export const Button = ({
 	variant,
 	text,
 	color,
@@ -43,17 +46,21 @@ export const TextButton = ({
 	parentCoreClass,
 	isLink,
 	path,
+	action,
+	actionArgs,
 }: ButtonProps) => {
 	// findValue(parentCoreClass, MANTINE_BUTTON_STYLE_VALUES)
 	// [mantineClassName[mantineClassName.indexOf(parentCoreClass)]]
+	const ref = useRef<HTMLButtonElement>();
+
 	return (
 		<>
 			<div className="textButton">
 				{isLink ? (
 					<a>
-						<Button
+						<MantineButton
 							classNames={{
-								root: "mantineButton__root",
+								root: "mantineButtonRoot",
 							}}
 							rightIcon={
 								icon && iconPosition === "right" ? iconElement : undefined
@@ -66,14 +73,18 @@ export const TextButton = ({
 							gradient={gradient}
 							loading={loading}
 							loaderPosition={loaderPosition}
+							onClick={(event: MouseEvent) => {
+								console.log(actionArgs);
+								action !== undefined ? action(event, actionArgs) : null;
+							}}
 						>
 							{text}
-						</Button>
+						</MantineButton>
 					</a>
 				) : (
-					<Button
+					<MantineButton
 						classNames={{
-							root: "mantineButton__root",
+							root: "mantineButtonRoot",
 						}}
 						rightIcon={
 							icon && iconPosition === "right" ? iconElement : undefined
@@ -84,9 +95,12 @@ export const TextButton = ({
 						gradient={gradient}
 						loading={loading}
 						loaderPosition={loaderPosition}
+						onClick={(event: MouseEvent) =>
+							action !== undefined ? action(actionArgs, event) : null
+						}
 					>
 						{text}
-					</Button>
+					</MantineButton>
 				)}
 				{/* <Button
 					classNames={{

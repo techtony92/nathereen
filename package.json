@@ -23,6 +23,7 @@
 		"@mantine/rte": "^4.2.9",
 		"@mantine/spotlight": "^4.2.9",
 		"@types/debug": "^4.1.7",
+		"@types/styled-components": "^5.1.25",
 		"dayjs": "^1.11.3",
 		"framer-motion": "^6.3.11",
 		"mongoose": "^6.3.8",
@@ -30,8 +31,10 @@
 		"next-connect": "^0.12.2",
 		"react": "18.1.0",
 		"react-dom": "18.1.0",
+		"react-draggable": "^4.4.5",
 		"react-icons": "^4.4.0",
 		"sharp": "^0.30.6",
+		"styled-components": "^5.3.5",
 		"uuid": "^8.3.2"
 	},
 	"devDependencies": {

@@ -1,11 +1,12 @@
 import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
+
 import Link from "next/link";
 import {
 	MANTINE_BUTTON_STYLES,
 	MANTINE_BUTTON_STYLE_VALUES,
 } from "../utils/styleUtils";
-import { TextButton } from "./Buttons";
+import { Button } from "./Buttons";
 type ArticlePreviewProps = {
 	ArticlePreviewImage: JSX.Element;
 	ArticlePreviewHeading: JSX.Element;
@@ -26,7 +27,7 @@ const ArticlePreview = ({
 				{ArticlePreviewHeadline}
 				<Link href={path} passHref={true}>
 					<a>
-						<TextButton
+						<Button
 							text={"Read More"}
 							variant={"subtle"}
 							color={undefined}

@@ -1,5 +1,5 @@
 import React from "react";
-import { appDebugger } from "../devtools/debugger";
+import { appDebugger } from "../../devtools/debugger";
 type HeadingProps = {
 	text: string;
 	classValue: string;

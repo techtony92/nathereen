@@ -116,8 +116,148 @@ html {
   width: 72rem;
 }
 
-.mantaineRootButton {
+.mantaineButtonRoot {
   color: #f2f0db;
   font-size: 2.5rem;
+}
+
+.mantineEditorRoot {
+  width: 800px;
+  height: 500px;
+  /* Needs to be 500 by default and
+	 auto when text is generated. */
+}
+
+.mantineEditorToolbar {
+  display: block;
+  margin: auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border: 3px solid green !important;
+}
+
+.createPost {
+  height: 100%;
+}
+
+.createPost .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.createPost .contentEditor {
+  height: 100vh;
+}
+
+.createPost .contentEditor .mantineEditorRoot__Title {
+  height: 20rem;
+  width: 80rem;
+}
+
+.createPost .contentEditor .mantineEditorRoot__Passage {
+  height: 60rem;
+  width: 100rem;
+}
+
+.createPost .contentEditor .mediaArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-column-gap: 5rem;
+          column-gap: 5rem;
+}
+
+.createPost .contentEditor .mediaArea .mediaList {
+  height: 100rem;
+  width: 30rem;
+  padding: 2rem 1.5rem;
+  border: 1px dashed #f2f0db;
+  overflow-y: auto;
+}
+
+.createPost .contentEditor .mediaArea .mediaListFrame {
+  position: relative;
+  height: 35rem;
+  margin-bottom: 3rem;
+}
+
+.createPost .contentEditor .mediaArea .mantineDropZoneRoot {
+  width: 70rem;
+}
+
+.createPost .createPostGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(35rem, auto))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(35rem, auto));
+  width: 100%;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+  row-gap: 2rem;
+  height: auto;
+}
+
+.createPost .createPostGrid .createPostGridItem {
+  position: relative;
+  width: 35rem;
+  height: 43rem;
+}
+
+.positioningEditor {
+  height: auto;
+}
+
+.positioningEditor .contentPositioning {
+  height: auto;
+  overflow-y: auto;
+}
+
+.positioningEditor .contentPositioning .textHandler {
+  width: 50rem;
+}
+
+.positioningEditor .contentPositioning .imageHandler {
+  display: inline-block;
+}
+
+.positioningEditor .contentPositioning .imageHandler .maneuverableImageFrame {
+  position: relative;
+  width: 30rem;
+  height: 40rem;
+}
+
+.contentPreview {
+  height: 100vh;
+}
+
+.contentPreview .imageHandler {
+  display: inline-block;
+}
+
+.contentPreview .imageHandler .previewImageFrame {
+  position: relative;
+  width: 30rem;
+  height: 40rem;
 }
 /*# sourceMappingURL=main.css.map */

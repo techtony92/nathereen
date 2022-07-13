@@ -1,4 +1,19 @@
-.mantaineRootButton {
+.mantaineButtonRoot {
 	color: $accentColor;
 	font-size: $ButtonFontSize;
+}
+
+.mantineEditorRoot {
+	width: 800px;
+	height: 500px; /* Needs to be 500 by default and
+	 auto when text is generated. */
+}
+
+.mantineEditorToolbar {
+	display: block;
+	margin: auto;
+	width: max-content;
+	border: 3px solid green !important;
+	&Wrapper {
+	}
 }
